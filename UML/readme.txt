@@ -1,1 +1,3 @@
-Diagramas UML nessa pasta
+Arquivo temporario.
+
+Diagramas UML vão nessa pasta
