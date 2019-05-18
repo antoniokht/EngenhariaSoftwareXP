@@ -1,26 +1,10 @@
 from django.shortcuts import render
-
-# Temporary:
-posts = [
-    {
-        'author': 'Tomas',
-        'title': 'My first question',
-        'content': 'How much is...?',
-        'date_posted': 'August 27, 2018'
-
-    },
-    {
-        'author': 'Elisa',
-        'title': 'Elisas first question',
-        'content': 'Where is...?',
-        'date_posted': 'April 3, 2019'
-    }
-]
+from .models import Question
 
 
 def home(request):
     context = {
-        'posts': posts
+        'questions': Question.objects.all()
     }
     return render(request, 'question/home.html', context)
 
