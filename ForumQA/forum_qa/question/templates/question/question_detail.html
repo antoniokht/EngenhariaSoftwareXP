@@ -1,0 +1,21 @@
+{% extends "question/base.html" %}
+{% block content %}
+<article class="media content-section">
+    <div class="media-body">
+        <div class="article-metadata">
+            <a class="mr-2" href="#">{{ object.author }}</a>
+            <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
+            {% if object.author == user %}
+            <div style="float: right;">
+                <a class="edit" title="Editar" href="{% url 'question-update' object.id %}" data-toggle="tooltip">
+                    <i class="fas fa-edit"></i></a>
+                <a class="delete" title="Deletar" href="{% url 'question-delete' object.id %}" data-toggle="tooltip">
+                    <i class="fas fa-trash" style="color:rgb(233, 57, 17)"></i></a>
+            </div>
+            {% endif %}
+        </div>
+        <h2 class="article-title">{{ object.title }}</h2>
+        <p class="article-content">{{ object.content }}</p>
+    </div>
+</article>
+{% endblock %}
