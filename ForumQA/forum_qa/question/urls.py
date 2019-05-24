@@ -1,8 +1,15 @@
 from django.urls import path
 from . import views
+from .views import QuestionListView, QuestionDetailView, QuestionCreateView, QuestionUpdateView, QuestionDeleteView
 
 
 urlpatterns = [
-    path('',  views.home, name='question-home'),
-    path('about/',  views.about, name='question-about')
+    path('',  QuestionListView.as_view(), name='question-home'),
+    path('question/<int:pk>/', QuestionDetailView.as_view(), name='question-detail'),
+    path('question/new/', QuestionCreateView.as_view(), name='question-create'),
+    path('question/<int:pk>/update/',
+         QuestionUpdateView.as_view(), name='question-update'),
+    path('question/<int:pk>/delete/',
+         QuestionDeleteView.as_view(), name='question-delete'),
+    path('about/',  views.about, name='question-about'),
 ]

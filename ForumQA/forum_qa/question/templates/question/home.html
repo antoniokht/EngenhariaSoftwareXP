@@ -1,15 +1,13 @@
 {% extends "question/base.html" %}
 {% block content %}
-<h1>Home</h1>
-<h2>List of questions:</h2>
 {% for question in questions %}
 <article class="media content-section">
     <div class="media-body">
         <div class="article-metadata">
             <a class="mr-2" href="#">{{ question.author }}</a>
-            <small class="text-muted">{{ question.date_questioned|date:"F d, Y" }}</small>
+            <small class="text-muted">{{ question.date_posted|date:"F d, Y" }}</small>
         </div>
-        <h2><a class="article-title" href="#">{{ question.title }}</a></h2>
+        <h2><a class="article-title" href="{% url 'question-detail' question.id %}">{{ question.title }}</a></h2>
         <p class="article-content">{{ question.content }}</p>
     </div>
 </article>
