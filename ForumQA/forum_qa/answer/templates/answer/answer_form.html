@@ -1,0 +1,29 @@
+{% extends "question/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+<article class="media content-section">
+    <div class="media-body">
+        <div class="article-metadata">
+            <a class="mr-2" href="#">{{ current_question.author }}</a>
+        </div>
+        <h2 class="article-title">{{ current_question.title }}</h2>
+        <p class="article-content">{{ current_question.content }}</p>
+    </div>
+</article>
+<div class="content-section">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">
+                Escreva sua resposta
+            </legend>
+            {{ form|crispy }}
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">
+                    Postar
+                </button>
+            </div>
+        </fieldset>
+    </form>
+</div>
+{% endblock %}

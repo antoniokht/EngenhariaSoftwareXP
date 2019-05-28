@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/', user_views.register, name='register'),
     path('', include('question.urls')),
+    path('answer/', include('answer.urls')),
 ]

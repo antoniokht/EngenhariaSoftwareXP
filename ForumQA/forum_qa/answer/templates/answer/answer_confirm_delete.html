@@ -4,12 +4,12 @@
     <form method="POST">
         {% csrf_token %}
         <fieldset class="form-group">
-            <h2>Deseja mesmo deletar a pergunta?</h2>
+            <h2>Deseja mesmo deletar a resposta?</h2>
             <div class="form-group">
                 <button class="btn btn-outline-danger" type="submit">
                     Sim
                 </button>
-                <a class="btn btn-outline-secondary" href="{% url 'question-detail' object.id %}">
+                <a class="btn btn-outline-secondary" href="{% url 'question-detail' object.question.id %}">
                     Não, cancelar
                 </a>
             </div>

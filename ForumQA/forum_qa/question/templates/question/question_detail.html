@@ -18,4 +18,35 @@
         <p class="article-content">{{ object.content }}</p>
     </div>
 </article>
+<div>
+    {% if user.is_authenticated %}
+    <a class="btn btn-info" href="{% url 'answer-create' object.id %}"><i class="fa fa-plus"></i> Dê
+        sua
+        resposta</a>
+    {% else %}
+    <p>Faça <a href="#">login</a> ou <a href="#">cadastro</a> para responder</p>
+    {% endif %}
+</div>
+<div style="margin-top: 20px">
+    {% for answer in object.answer_set.all %}
+    <article class="media content-section">
+        <div class="media-body">
+            <div class="article-metadata">
+                <a class="mr-2" href="#">{{ answer.author }}</a>
+                <small class="text-muted">{{ answer.date_posted|date:"F d, Y" }}</small>
+                {% if answer.author == user %}
+                <div style="float: right;">
+                    <a class="edit" title="Editar" href="{% url 'answer-update' answer.id %}" data-toggle="tooltip">
+                        <i class="fas fa-edit"></i></a>
+                    <a class="delete" title="Deletar" href="{% url 'answer-delete' answer.id %}" data-toggle="tooltip">
+                        <i class="fas fa-trash" style="color:rgb(233, 57, 17)"></i></a>
+                </div>
+                {% endif %}
+            </div>
+            <p class="article-content">{{ answer.content }}</p>
+        </div>
+    </article>
+    {% endfor %}
+</div>
+
 {% endblock %}
