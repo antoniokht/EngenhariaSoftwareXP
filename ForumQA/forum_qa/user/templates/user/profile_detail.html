@@ -17,4 +17,44 @@
     <a class="btn btn-outline-danger" href="{% url 'user-delete' user.id %}">Excluir Perfil</a>
 </div>
 {% endif %}
+<div style="margin-top: 20px">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="question-tab" data-toggle="tab" href="#question" role="tab"
+                aria-controls="question" aria-selected="true">Perguntas</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="answer-tab" data-toggle="tab" href="#answer" role="tab" aria-controls="answer"
+                aria-selected="false">Respostas</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="question" role="tabpanel" aria-labelledby="question-tab">
+            {% for question in object.user.question_set.all reversed %}
+            <article class="media content-section">
+                <div class="media-body">
+                    <div class="article-metadata">
+                        <small class="text-muted">{{ question.date_posted|date:"F d, Y" }}</small>
+                    </div>
+                    <a class="article-content" href="{% url 'question-detail' question.id %}">{{ question.title }}</a>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+        <div class="tab-pane fade" id="answer" role="tabpanel" aria-labelledby="answer-tab">
+            {% for answer in object.user.answer_set.all reversed %}
+            <article class="media content-section">
+                <div class="media-body">
+                    <div class="article-metadata">
+                        <small class="text-muted">{{ answer.date_posted|date:"F d, Y" }}</small>
+                    </div>
+                    <a class="article-content"
+                        href="{% url 'question-detail' answer.question.id %}">{{ answer.content }}</a>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
 {% endblock content %}
