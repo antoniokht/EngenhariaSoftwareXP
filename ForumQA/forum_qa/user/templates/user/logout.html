@@ -1,9 +1,7 @@
 {% extends 'question/base.html' %}
 {% block content %}
-    <h2>Você saiu da sua conta</h2>
-    <div class="border-top pt-3">
-        <small class="text-muted">
-            <a href="{% url 'login' %}">Entrar</a>
-        </small>
-    </div>
+<h2>Você saiu da sua conta</h2>
+<div class="border-top pt-3">
+    <a href="{% url 'login' %}">Entrar</a>
+</div>
 {% endblock content %}

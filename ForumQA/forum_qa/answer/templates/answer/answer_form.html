@@ -4,7 +4,8 @@
 <article class="media content-section">
     <div class="media-body">
         <div class="article-metadata">
-            <a class="mr-2" href="#">{{ current_question.author }}</a>
+            <a class="mr-2"
+                href="{% url 'user-detail' current_question.author.profile.id %}">{{ current_question.author }}</a>
         </div>
         <h2 class="article-title">{{ current_question.title }}</h2>
         <p class="article-content">{{ current_question.content }}</p>
