@@ -1,9 +1,11 @@
 {% extends "question/base.html" %}
 {% block content %}
 <article class="media content-section">
+
+    <img class="rounded-circle article-img" src="{{ object.author.profile.image.url }}">
     <div class="media-body">
         <div class="article-metadata">
-            <a class="mr-2" href="#">{{ object.author }}</a>
+            <a class="mr-2" href="{% url 'user-detail' object.author.profile.id %}">{{ object.author }}</a>
             <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
             {% if object.author == user %}
             <div style="float: right;">
@@ -24,15 +26,17 @@
         sua
         resposta</a>
     {% else %}
-    <p>Faça <a href="#">login</a> ou <a href="#">cadastro</a> para responder</p>
+    <p>Faça <a href="{% url 'login' %}">login</a> ou <a href="{% url 'register' %}">cadastro</a> para responder</p>
     {% endif %}
 </div>
 <div style="margin-top: 20px">
-    {% for answer in object.answer_set.all %}
+    {% for answer in object.answer_set.all reversed %}
     <article class="media content-section">
+
+        <img class="rounded-circle article-img" src="{{ answer.author.profile.image.url }}">
         <div class="media-body">
             <div class="article-metadata">
-                <a class="mr-2" href="#">{{ answer.author }}</a>
+                <a class="mr-2" href="{% url 'user-detail' answer.author.profile.id %}">{{ answer.author }}</a>
                 <small class="text-muted">{{ answer.date_posted|date:"F d, Y" }}</small>
                 {% if answer.author == user %}
                 <div style="float: right;">

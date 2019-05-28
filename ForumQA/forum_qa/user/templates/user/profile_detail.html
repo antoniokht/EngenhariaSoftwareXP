@@ -1,0 +1,20 @@
+{% extends 'question/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="content-section">
+    <div class="media">
+        <img class="rounded-circle account-img" src="{{ object.user.profile.image.url }}">
+        <div class="media-body">
+            <h2 class="account-heading">{{ object.user.username }}</h2>
+            <p class="text-secondary">{{ object.user.email }}</p>
+        </div>
+    </div>
+
+</div>
+{% if object.user == user %}
+<div>
+    <a class="btn btn-outline-info" href="{% url 'profile' %}">Editar Perfil</a>
+    <a class="btn btn-outline-danger" href="{% url 'user-delete' user.id %}">Excluir Perfil</a>
+</div>
+{% endif %}
+{% endblock content %}
