@@ -18,3 +18,8 @@ class Answer(models.Model):
 
     def get_absolute_url(self):
         return reverse('question-detail', kwargs={'pk': self.question.pk})
+
+    def __str__(self):
+        if len(self.content) > 20:
+            return self.content[:20] + "..."
+        return self.content

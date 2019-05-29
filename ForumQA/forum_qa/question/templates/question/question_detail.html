@@ -11,7 +11,7 @@
             <div style="float: right;">
                 <a class="edit" title="Editar" href="{% url 'question-update' object.id %}" data-toggle="tooltip">
                     <i class="fas fa-edit"></i></a>
-                <a class="delete" title="Deletar" href="{% url 'question-delete' object.id %}" data-toggle="tooltip">
+                <a class="delete" title="Excluir" href="{% url 'question-delete' object.id %}" data-toggle="tooltip">
                     <i class="fas fa-trash" style="color:rgb(233, 57, 17)"></i></a>
             </div>
             {% endif %}
@@ -42,7 +42,7 @@
                 <div style="float: right;">
                     <a class="edit" title="Editar" href="{% url 'answer-update' answer.id %}" data-toggle="tooltip">
                         <i class="fas fa-edit"></i></a>
-                    <a class="delete" title="Deletar" href="{% url 'answer-delete' answer.id %}" data-toggle="tooltip">
+                    <a class="delete" title="Excluir" href="{% url 'answer-delete' answer.id %}" data-toggle="tooltip">
                         <i class="fas fa-trash" style="color:rgb(233, 57, 17)"></i></a>
                 </div>
                 {% endif %}

@@ -10,7 +10,7 @@
                 <button class="btn btn-outline-danger" type="submit">
                     Sim
                 </button>
-                <a class="btn btn-outline-secondary" href="{% url 'profile' %}">
+                <a class="btn btn-outline-secondary" href="{% url 'user-detail' request.user.id %}">
                     Não, cancelar
                 </a>
             </div>
