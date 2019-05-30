@@ -30,14 +30,14 @@
     {% endif %}
 </div>
 <div style="margin-top: 20px">
-    {% for answer in object.answer_set.all reversed %}
+    {% for answer in object.answer_set.all %}
     <article class="media content-section">
 
         <img class="rounded-circle article-img" src="{{ answer.author.profile.image.url }}">
         <div class="media-body">
             <div class="article-metadata">
                 <a class="mr-2" href="{% url 'user-detail' answer.author.profile.id %}">{{ answer.author }}</a>
-                <small class="text-muted">{{ answer.date_posted|date:"F d, Y" }}</small>
+                <small class="text-muted">{{ answer.date_posted }}</small>
                 {% if answer.author == user %}
                 <div style="float: right;">
                     <a class="edit" title="Editar" href="{% url 'answer-update' answer.id %}" data-toggle="tooltip">

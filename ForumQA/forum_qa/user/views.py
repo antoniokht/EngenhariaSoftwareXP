@@ -31,7 +31,7 @@ def profile(request):
             u_form.save()
             p_form.save()
             messages.success(request, f'Perfil editado com sucesso')
-            return redirect('profile')
+            return redirect('/')
 
     else:
         u_form = UserUpdateForm(instance=request.user)
