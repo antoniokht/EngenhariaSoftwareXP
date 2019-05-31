@@ -21,5 +21,5 @@ class Answer(models.Model):
 
     def __str__(self):
         if len(self.content) > 20:
-            return self.content[:20] + "..."
+            return self.content[:20] + " [...]"
         return self.content
