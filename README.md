@@ -16,7 +16,7 @@ O objetivo é construir um site de fórum onde usuários podem perguntar e respo
 
 # Burndown Chart
 
-- A ser montado
+- https://docs.google.com/spreadsheets/d/1iXOpFtRb9Gd3g2v-A1Ro7QiDesqoAEQTVC2yMXvhq-g/edit?usp=sharing
 
 # Integrantes
 
