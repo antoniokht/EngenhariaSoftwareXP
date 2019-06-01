@@ -7,7 +7,8 @@ O objetivo é construir um site de fórum onde usuários podem perguntar e respo
 # Tecnologias
 
 - Web framework: Django
-- Database: MongoDB
+- Database: PostgreSQL
+- File system: AWS S3
 - Deploy: Heroku
 
 # Trello
