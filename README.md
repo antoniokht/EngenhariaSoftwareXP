@@ -1,4 +1,4 @@
-# EngenhariaSoftwareXP
+﻿# EngenhariaSoftwareXP
 
 Projeto da disciplina Engenharia de Software - UFMG 2019/1
 Este trabalho prático propõe simular um processo de desenvolvimento de software seguindo os princípios de XP.
@@ -7,7 +7,7 @@ O objetivo é construir um site de fórum onde usuários podem perguntar e respo
 # Tecnologias
 
 - Web framework: Django
-- Database: MongoDB
+- Database: PostgreSQL
 - Deploy: Heroku
 
 # Trello
