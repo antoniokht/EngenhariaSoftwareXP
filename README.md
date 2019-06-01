@@ -18,7 +18,7 @@ Link do site: https://forumqa.herokuapp.com/
 
 # Burndown Chart
 
-- A ser montado
+- https://docs.google.com/spreadsheets/d/1iXOpFtRb9Gd3g2v-A1Ro7QiDesqoAEQTVC2yMXvhq-g/edit?usp=sharing
 
 # Integrantes
 
